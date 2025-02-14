@@ -100,34 +100,56 @@ export default function TicketSelection() {
                     "linear-gradient(to left, #07373F 40%, rgba(10, 12, 17, 0.1) 100%)",
                 }}
               >
-                <h2
-                  className="header"
-                  style={{
-                    fontSize: "62px",
-                    textAlign: "center",
-                    marginBottom: "0.5rem",
-                    fontFamily: "'Road Rage', cursive",
-                  }}
-                >
-                  {" "}
-                  Techember Fest '25
-                </h2>
+                <>
+                  <h2 className="header">Techember Fest '25</h2>
 
-                <p style={{ color: "white", textAlign: "center" }}>
-                  Join us for an unforgettable experience at
-                </p>
-                <p style={{ color: "white", textAlign: "center" }}>
-                  our flagship event and tech fest
-                </p>
-                <div
-                  style={{
-                    fontSize: "0.875rem",
-                    color: "white",
-                    marginTop: "1rem",
-                    textAlign: "center",
-                  }}
-                >
-                  March 15, 2025 7:00 PM
+                  <style jsx>{`
+                    .header {
+                      font-size: 62px;
+                      text-align: center;
+                      margin-bottom: 0.5rem;
+                      font-family: "Road Rage", cursive;
+                    }
+
+                    @media (max-width: 768px) {
+                      .header {
+                        font-size: 34px;
+                      }
+                    }
+                  `}</style>
+                </>
+                <div className="techember-text">
+                  <p>Join us for an unforgettable experience at</p>
+                  <p>our flagship event and tech fest</p>
+                  <div className="event-details">March 15, 2025 7:00 PM</div>
+
+                  <style jsx>{`
+                    .techember-text {
+                      text-align: center;
+                      color: white;
+                    }
+
+                    p {
+                      font-size: 1rem;
+                      margin: 0;
+                    }
+
+                    .event-details {
+                      font-size: 0.875rem;
+                      margin-top: 1rem;
+                    }
+
+                    /* Smaller font sizes for mobile screens */
+                    @media (max-width: 768px) {
+                      p {
+                        font-size: 0.65rem;
+                      }
+
+                      .event-details {
+                        font-size: 0.5rem;
+                      }
+                    }
+                  `}</style>
                 </div>
               </div>
               <div
