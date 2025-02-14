@@ -1,9 +1,8 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./NavBar";
 
-export default function TicketReady() {
+const Ticket = () => {
   const [ticketData, setTicketData] = useState(null);
   const [attendeeData, setAttendeeData] = useState(null);
 
@@ -22,50 +21,207 @@ export default function TicketReady() {
   return (
     <div
       style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         minHeight: "100vh",
-        backgroundColor: "#1e293b",
-        padding: "1rem",
+        background: "linear-gradient(to bottom, #0b132b, black)",
+        color: "white",
+        padding: "20px",
       }}
     >
-      <Navbar />
-      <div style={{ maxWidth: "40rem", margin: "0 auto" }}>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "400px",
+          backgroundColor: "#1a1a2e",
+          padding: "20px",
+          textAlign: "center",
+          border: "2px solid #00d4ff",
+          boxShadow: "0px 0px 15px rgba(0, 255, 255, 0.5)",
+          position: "relative",
+        }}
+      >
+        {/* Inside Cut-Out Effect */}
         <div
           style={{
-            backgroundColor: "#1e293b",
-            color: "white",
-            padding: "1rem",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: "0",
+            left: "0",
+            pointerEvents: "none",
           }}
         >
-          <h2
+          <div
             style={{
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              marginBottom: "0.5rem",
+              position: "absolute",
+              width: "10px", // Width for an oval shape
+              height: "10px", // Height remains smaller
+              backgroundColor: "#0b132b",
+              borderRadius: "50%", // Ensures an oval shape when width ≠ height
+              top: "-20px",
+              left: "-20px",
+              borderRight: "2px solid #00d4ff", // Border on the left
+              transform: "skewX(-20deg)", // Leaning effect towards the right
+            }}
+          ></div>
+
+          <div
+            style={{
+              position: "absolute",
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#0b132b",
+              borderRadius: "50%",
+              top: "-20px",
+              right: "-20px",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#0b132b",
+              borderRadius: "50%",
+              bottom: "-20px",
+              left: "-20px",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#0b132b",
+              borderRadius: "50%",
+              bottom: "-20px",
+              right: "-20px",
+            }}
+          ></div>
+        </div>
+
+        <h2 style={{ fontSize: "22px", fontWeight: "bold", color: "#00d4ff" }}>
+          Your Ticket is Booked!
+        </h2>
+        <p style={{ marginTop: "10px", color: "#ccc" }}>
+          Check your email for a copy or download below
+        </p>
+
+        {/* Ticket Card */}
+        <div
+          style={{
+            marginTop: "20px",
+            backgroundColor: "#12232e",
+            padding: "15px",
+            border: "1px solid #00d4ff",
+            borderRadius: "10px",
+            position: "relative",
+          }}
+        >
+          <h3 style={{ fontSize: "18px", fontWeight: "bold", color: "white" }}>
+            Techember Fest '25
+          </h3>
+          <p style={{ color: "#ccc", fontSize: "12px" }}>
+            📍 64 Rumens Road, Ikoyi, Lagos
+          </p>
+          <p style={{ color: "#ccc", fontSize: "12px" }}>
+            📅 March 15, 2025 | 8:00 PM
+          </p>
+
+          <div
+            style={{
+              marginTop: "10px",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            Your Ticket for Techember Fest 2025
-          </h2>
-          <p>Ticket Type: {ticketData.selectedTicket}</p>
-          <p>Number of Tickets: {ticketData.numTickets}</p>
-          <p>Name: {attendeeData.name}</p>
-          <p>Email: {attendeeData.email}</p>
-          {attendeeData.image && (
-            <div style={{ marginTop: "1rem" }}>
-              <img
-                src={attendeeData.image}
-                alt="Profile"
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                }}
-              />
-              <p>Profile photo uploaded successfully</p>
-            </div>
-          )}
+            <img
+              src={attendeeData.image || "https://via.placeholder.com/80"}
+              alt="Profile"
+              style={{
+                width: "70px",
+                height: "70px",
+                borderRadius: "50%",
+                border: "2px solid #00d4ff",
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              marginTop: "15px",
+              textAlign: "left",
+              color: "#ccc",
+              fontSize: "12px",
+              lineHeight: "1.5",
+            }}
+          >
+            <p>
+              <strong style={{ color: "white" }}>Name:</strong>{" "}
+              {attendeeData.name}
+            </p>
+            <p>
+              <strong style={{ color: "white" }}>Email:</strong>{" "}
+              {attendeeData.email}
+            </p>
+            <p>
+              <strong style={{ color: "white" }}>Ticket Type:</strong>{" "}
+              {ticketData.selectedTicket}
+            </p>
+            <p>
+              <strong style={{ color: "white" }}>Ticket For:</strong>{" "}
+              {ticketData.numTickets}
+            </p>
+            <p>
+              <strong style={{ color: "white" }}>Special Request:</strong> N/A
+            </p>
+          </div>
+
+          {/* Barcode */}
+          <div
+            style={{
+              marginTop: "15px",
+              backgroundColor: "white",
+              padding: "8px",
+              borderRadius: "5px",
+              textAlign: "center",
+              color: "black",
+              fontFamily: "monospace",
+              fontSize: "16px",
+            }}
+          >
+            234567 890236
+          </div>
+
+          {/* Download Button */}
+          <button
+            style={{
+              marginTop: "15px",
+              width: "100%",
+              backgroundColor: "#00d4ff",
+              color: "white",
+              fontWeight: "bold",
+              padding: "10px",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer",
+              transition: "background 0.3s ease",
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#0094cc")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "#00d4ff")
+            }
+          >
+            Download Ticket
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Ticket;
