@@ -407,19 +407,18 @@ const TicketReady = () => {
       </div>
 
       {/* ✅ Paragraph at the Bottom */}
-      <p
+      <img
+        src="https://i.ibb.co/xqKNFc4M/Bar-Code.png"
+        alt="Barcode"
         style={{
-          color: "white",
-          fontSize: "14px",
+          width: "80%", // Adjust size as needed
+          maxWidth: "250px", // Prevents it from getting too large
           position: "absolute",
-          bottom: "15%", // Keeps it near the bottom
+          bottom: "10%", // Keeps it near the bottom
           left: "50%",
           transform: "translateX(-50%)",
-          maxWidth: "50%",
         }}
-      >
-        Get ready for an unforgettable night of innovation and networking!
-      </p>
+      />
     </div>
   );
 };
