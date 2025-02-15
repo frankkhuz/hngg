@@ -19,7 +19,9 @@ export default function Navbar() {
       }}
     >
       {/* Placeholder for Logo */}
-      <div style={{ width: "10%" }}>{/* <Image src={} alt="Logo" /> */}</div>
+      <div style={{ width: "10%" }}>
+        <img src={"https://i.ibb.co/b5qpPXzJ/Frame-1618871078.png"} alt="" />
+      </div>
 
       {/* Centered Navigation Links - Hidden on Mobile */}
       <div
