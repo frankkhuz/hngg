@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Road+Rage&display=swap");
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
