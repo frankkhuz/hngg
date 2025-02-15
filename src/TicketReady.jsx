@@ -312,7 +312,7 @@ const TicketReady = () => {
               width: "80%", // Adjust size as needed
               maxWidth: isMobile ? "200px" : "250px", // Prevents it from getting too large
               position: "absolute",
-              bottom: isMobile ? "17%" : "10%", // Keeps it near the bottom
+              bottom: isMobile ? "19%" : "10%", // Keeps it near the bottom
               left: "50%",
               transform: "translateX(-50%)",
             }}
