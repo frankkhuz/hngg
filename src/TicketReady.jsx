@@ -70,7 +70,7 @@ const TicketReady = () => {
             className="top"
             style={{
               position: "absolute",
-              top: isMobile ? "15%" : "10%",
+              top: isMobile ? "17%" : "10%",
               left: "50%",
               transform: "translateX(-50%)",
               display: "flex",
@@ -119,7 +119,7 @@ const TicketReady = () => {
               borderRadius: "1rem",
               border: "3px solid #24A0B5",
               position: "absolute",
-              top: "25%",
+              top: isMobile ? "27%" : "25%",
               left: "50%",
               transform: "translateX(-50%)", // Centers it horizontally
             }}
